@@ -1,3 +1,4 @@
+// Sign Up Page Buttons
 class SignUpElective
 {
     constructor(name, description)
@@ -32,7 +33,6 @@ export class SignUpButton
     {
         var t_elective = new SignUpElective(name, description)
         this.elective.push(t_elective)
-        delete t_elective
     }
 
     name()
