@@ -87,7 +87,5 @@ const styles = StyleSheet.create({
     fontSize: 23,
     marginBottom: 20,
   },
-  cardDescription: {
-
-  },
+  
 });

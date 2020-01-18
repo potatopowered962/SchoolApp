@@ -10,6 +10,7 @@ import { createMaterialBottomTabNavigator, NavigationMaterialBottomTabOptions, }
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import CreateEvents from './components/navigation/CreateEvents.js';
+import Students from './components/navigation/Students.js';
 import Home from './components/navigation/Home.js';
 import Upload from './components/navigation/Upload.js';
 import Settings from './components/navigation/Settings.js';
@@ -30,6 +31,12 @@ const BottomTabMaterial = createMaterialBottomTabNavigator(
       screen: CreateEvents,
       navigationOptions: {
         tabBarIcon: tabBarIcon('event')
+      }
+    },
+    Students:{
+      screen: Students,
+      navigationOptions: {
+        tabBarIcon: tabBarIcon('person')
       }
     },
     Home:{

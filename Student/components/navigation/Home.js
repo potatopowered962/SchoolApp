@@ -4,12 +4,10 @@ import {
   Text,
   View ,
   Button,
- FlatList,
- ActivityIndicator,
-
+  FlatList,
+  ActivityIndicator,
 } from 'react-native';
 import Constants from 'expo-constants';
-// import {globalStyles} from '../../styles/global'
 import { Header } from 'react-native-elements';
 
 

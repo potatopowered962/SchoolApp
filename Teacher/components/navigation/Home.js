@@ -4,8 +4,8 @@ import {
   Text,
   View ,
   Button,
- FlatList,
- ActivityIndicator,
+  FlatList,
+  ActivityIndicator,
 
 } from 'react-native';
 import Constants from 'expo-constants';
@@ -47,21 +47,33 @@ export default class Home extends React.Component {
 
     return(
       <View style={styles.container} >
-        <Header  centerComponent={{ text: 'MY TITLE', style: { color: 'rgb(122,143,66)' } }}/>
+
+        <Header centerComponent={{ text: 'MY TITLE', style: { color: '#000' } }}/>
+
         <View style={styles.classContainer}>
           <FlatList
-          data={this.state.dataSource}
-          renderItem={({item}) => <Text style={styles.textcontainer}><Text style={styles.text}>{item.title}, {item.releaseYear}</Text></Text>}
-          keyExtractor={({id}, index) => id}
+            data={this.state.dataSource}
+            renderItem={({item}) =>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>{item.title}, {item.releaseYear}</Text>
+              </View>
+            }
+            keyExtractor={({id}, index) => id}
           />
         </View>
+
         <View style={styles.classContainer}>
           <FlatList
-          data={this.state.dataSource}
-          renderItem={({item}) => <Text style={styles.textcontainer} >{item.title}, {item.releaseYear}</Text>}
-          keyExtractor={({id}, index) => id}
+            data={this.state.dataSource}
+            renderItem={({item}) =>
+              <View style={styles.textContainer}>
+                <Text style={styles.text}>{item.title}, {item.releaseYear}</Text>
+              </View>
+            }
+            keyExtractor={({id}, index) => id}
           />
         </View>
+
       </View>
         
       
@@ -73,7 +85,7 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#deff8b',
+    backgroundColor: '#cadefc',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -86,7 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#d5c455',
     borderColor: '#be8abf'
   },
-  textcontainer: {
+  textContainer: {
     width: 200,
     height:50,
     borderWidth: 3,
