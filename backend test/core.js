@@ -80,13 +80,11 @@ export class SignUpButton
 export class EventList
 {
 
-
-    constructor(name, description, datea = [])
+    constructor(name, description, datea)
     {
         this.name = name
         this.description = description
         this.datea = datea
-        this.date = 'null'
     }
 
     name()
@@ -176,15 +174,15 @@ export class EventList
 
     date1()   //01-01-2020
     {
-        var ret = (datea[0]).toString()
-        ret.concat('-',(datea[1]).toString(),'-',(datea[2]).toString())
+        var ret = (this.datea[0]).toString()
+        ret.concat('-',(this.datea[1]).toString(),'-',(this.datea[2]).toString())
         return ret
     }
 
     date2()   //01 January 2020
     {
-        var ret = (datea[0]).toString()
-        ret.concat(' ',this.month_w(),' ',(datea[2]).toString())
+        var ret = (this.datea[0]).toString()
+        ret.concat(' ',this.month_w(),' ',(this.datea[2]).toString())
         return ret
     }
 
