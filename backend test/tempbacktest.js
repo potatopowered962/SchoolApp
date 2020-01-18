@@ -27,12 +27,14 @@ export function getSignUpButton()
 
 }
 
-export function getEventList()
+export function getEventList(id)
 {
     var ret = []
     var a = new EventList('Open House','Show off the school and waste money',datearray(15012020))
+    a.dateformat(id)
     ret.push(a)
-    var b = new EventList('Matriculation Day','Fist Day of school for J1',datearray(05022002))
+    var b = new EventList('Matriculation Day','Fist Day of school for J1',datearray(5022002))
+    b.dateformate(id)
     ret.push(b)
     return ret
 }
