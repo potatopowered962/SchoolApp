@@ -85,7 +85,7 @@ export class EventList
         this.name = name
         this.description = description
         this.date0 = date0
-        this.date = date2()
+        this.date = 'null'
     }
 
     name()
@@ -154,7 +154,22 @@ export class EventList
                 return 'December'
                 break;
             default:
-                return null
+                return 'null'
+        }
+    }
+
+    dateformat(id)
+    {
+        switch(id)
+        {
+            case 1:
+                this.date = this.date1()
+                break;
+            case 2:
+                this.date = this.date2()
+                break;
+            default:
+                this.date = this.date1()
         }
     }
 
