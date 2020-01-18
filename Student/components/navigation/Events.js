@@ -6,17 +6,20 @@ import {
   FlatList
 } from 'react-native';
 
+import { getEventList } from "../../../backend test/tempbacktest";
 
 export default function Events() {
-  const [event, setEvent] = useState([
-    { name: 'GP Day', date: '19 January 2020', description: 'Lorem Ipsum is simply dummy text of the printing.', id: '1' },
-    { name: 'TM Run', date: '1 January 2020', description: 'with the release of Letraset sheets containing', id: '2' },
-    { name: 'Math Olympiad Signup', date: '19 February 2020', description: 'letters, as opposed to using Content here, content', id: '3' },
-    { name: 'Math Elective', date: '19 March 2020', description: 'years, sometimes by accident', id: '4' },
-    { name: 'Chemistry Elective', date: '3 January 2020', description: 'are going to use a passage of Lorem Ipsum, you', id: '5' },
-    { name: 'Econmics Elective', date: '19 June 2020', description: 'repeat predefined chunks as necessary, making this the', id: '6' },
-    { name: 'Physics Elective', date: '4 April 2020', description: '2000 years old. Richard McClintock', id: '7' },
-  ]);
+  // const [event, setEvent] = useState([
+  //   { name: 'GP Day', date: '19 January 2020', description: 'Lorem Ipsum is simply dummy text of the printing.', id: '1' },
+  //   { name: 'TM Run', date: '1 January 2020', description: 'with the release of Letraset sheets containing', id: '2' },
+  //   { name: 'Math Olympiad Signup', date: '19 February 2020', description: 'letters, as opposed to using Content here, content', id: '3' },
+  //   { name: 'Math Elective', date: '19 March 2020', description: 'years, sometimes by accident', id: '4' },
+  //   { name: 'Chemistry Elective', date: '3 January 2020', description: 'are going to use a passage of Lorem Ipsum, you', id: '5' },
+  //   { name: 'Econmics Elective', date: '19 June 2020', description: 'repeat predefined chunks as necessary, making this the', id: '6' },
+  //   { name: 'Physics Elective', date: '4 April 2020', description: '2000 years old. Richard McClintock', id: '7' },
+  // ]);
+
+  const [event, setEvent] = useState(getEventList(2))
 
   return (
     <View style={styles.container}>

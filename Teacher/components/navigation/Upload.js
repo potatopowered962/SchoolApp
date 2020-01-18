@@ -12,8 +12,6 @@ import {
 import { RNCamera } from 'react-native-camera';
 import * as ImagePicker from 'expo-image-picker';
 
-import ImagePicker from "react-native-image-picker";
-
 
 export default class Upload extends React.Component {
   state = {

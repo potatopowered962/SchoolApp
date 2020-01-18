@@ -9,7 +9,6 @@ const screens = {
         screen: SignUpList,
         navigationOptions: {
             title: 'Click to sign up!',
-            // headerStyle: { backgroundColor: '#333'}
         }
     },
 
@@ -17,8 +16,6 @@ const screens = {
         screen: SignUpPage,
         navigationOptions: {
             title: 'Sign Up Page',
-            headerMode: false,
-            // headerStyle: { backgroundColor: '#eee'}
         }
     }
 }
