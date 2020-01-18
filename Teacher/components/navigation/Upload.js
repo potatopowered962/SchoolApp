@@ -10,37 +10,57 @@ import {
   Image,
 } from 'react-native';
 import { RNCamera } from 'react-native-camera';
+import * as ImagePicker from 'expo-image-picker';
 
 import ImagePicker from "react-native-image-picker";
 
 
 export default class Upload extends React.Component {
-  state={photo:null,}
- handleChoosePhoto=()=> {
-   const options = {noData :true };
-   ImagePicker.launchImageLibrary(options,response=>{
-     console.log("response",response);
-     }
-   )
- }
- render(){
- const {photo} = this.state;
+  state = {
+    image: null,
+  };
+
+  render() {
+    let { image } = this.state;
+
     return (
-    <View style={{  flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',}}>
-      <View> 
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button
-          title="Upload timetable"
-          
-          onPress={this.handleChoosePhoto.bind(this)}
+          title="Upload"
+          onPress={this._pickImage}
         />
-        </View>
-      
-    
-    </View>
+        {image &&
+          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+      </View>
+    );
+  }
 
-    )
-}
+  componentDidMount() {
+    this.getPermissionAsync();
+    console.log('hi');
+  }
 
+  getPermissionAsync = async () => {
+    if (Constants.platform.ios) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    }
+  }
+
+  _pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
+  };
 }
