@@ -19,7 +19,7 @@ export default function Events() {
   //   { name: 'Physics Elective', date: '4 April 2020', description: '2000 years old. Richard McClintock', id: '7' },
   // ]);
 
-  const [event, setEvent] = useState(getEventList())
+  const [event, setEvent] = useState(getEventList(2))
 
   return (
     <View style={styles.container}>

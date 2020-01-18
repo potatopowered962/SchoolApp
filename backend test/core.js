@@ -1,12 +1,92 @@
-export class EventList
+// Sign Up Page Buttons
+class SignUpElective
 {
-
-    constructor(name, description, date0)
+    constructor(name, description)
     {
         this.name = name
         this.description = description
-        this.date0 = date0
-        this.date = date2()
+    }
+
+    name()
+    {
+        return this.name
+    }
+
+    description()
+    {
+        return this.description
+    }
+
+}
+
+export class SignUpButton
+{
+
+    constructor(name, description)
+    {
+        this.name = name
+        this.description = description
+        this.elective = []
+    }
+
+    addelective(name, description)
+    {
+        var t_elective = new SignUpElective(name, description)
+        this.elective.push(t_elective)
+    }
+
+    name()
+    {
+        return this.name
+    }
+
+    description()
+    {
+        return this.description
+    }
+
+    electivecount()
+    {
+        return this.elective.length
+    }
+
+    electivename(i)
+    {
+        if (i < this.electivecount())
+        {
+            return ''
+        }   
+
+        else{
+            return this.elective[i].name
+        }
+    }
+
+    electivedescription(i)
+    {
+        if (i < this.electivecount())
+        {
+            return ''
+        }   
+
+        else{
+         return this.elective[i].description
+        }
+    }
+
+}
+
+// Event Page
+export class EventList
+{
+
+
+    constructor(name, description, datea = [])
+    {
+        this.name = name
+        this.description = description
+        this.datea = datea
+        this.date = 'null'
     }
 
     name()
@@ -21,22 +101,22 @@ export class EventList
 
     day()
     {
-        return this.date0[0]
+        return this.datea[0]
     }
 
     month()
     {
-        return this.date0[1]
+        return this.datea[1]
     }
 
     year()
     {
-        return this.date0[2]
+        return this.datea[2]
     }
 
     month_w()
     {
-        switch(this.date0[1])
+        switch(this.datea[1])
         {
             case 1:
                 return 'January'
@@ -75,21 +155,36 @@ export class EventList
                 return 'December'
                 break;
             default:
-                return null
+                return 'null'
+        }
+    }
+
+    dateformat(id)
+    {
+        switch(id)
+        {
+            case 1:
+                this.date = this.date1()
+                break;
+            case 2:
+                this.date = this.date2()
+                break;
+            default:
+                this.date = this.date1()
         }
     }
 
     date1()   //01-01-2020
     {
-        var ret = (date0[0]).toString()
-        ret.concat('-',(date0[1]).toString(),'-',(date0[2]).toString())
+        var ret = (datea[0]).toString()
+        ret.concat('-',(datea[1]).toString(),'-',(datea[2]).toString())
         return ret
     }
 
     date2()   //01 January 2020
     {
-        var ret = (date0[0]).toString()
-        ret.concat(' ',this.month_w(),' ',(date0[2]).toString())
+        var ret = (datea[0]).toString()
+        ret.concat(' ',this.month_w(),' ',(datea[2]).toString())
         return ret
     }
 
