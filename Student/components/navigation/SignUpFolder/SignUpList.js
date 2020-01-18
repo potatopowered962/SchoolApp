@@ -7,17 +7,46 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+ import { getSignUpButton } from "../../../../backend test/tempbacktest";
 
 export default function SignUpList({ navigation }) {
+  // var tempint = 9;
+  // var temparray = [
+  //   { name: 'This is all placeholder data', description: 'fggfgfgfgsd', id: '1' },
+  //   { name: 'placeholder event', description: 'with lorem ipsumthe ', id: '2' },
+  //   { name: 'Careers And Higher Education Fest', description: 'lelorem ipsumtte, content', id: '3' },
+  //   { name: 'Math Elective', description: 'years, ,  hereccident', id: '4' },
+  //   { name: 'Chemistry Elective', description: 'are gipsumoing  Ipsum, you', id: '5' },
+  //   { name: 'Econmics Elective', description: 'ipsumipsumipsum', id: '6' },
+  // ];
+  // temparray.push({ name: 'tertrtetert', description: 'ryry ipsum ock', id: '8' })
+  // temparray.push({ name: 'ehbrehr', description: 'ryry efe ock', id: '9' })
+
+  // <getSignUpButton/>
+
+  /*
+  for (var i = 0; i < tempint; i++) {
+    var n = i.toString()
+    temparray.push({ name: a[i].name(), description: a[i].description(), id:n});
+  }
+  */
+
+
+  
+  /*
   const [event, setEvent] = useState([
-    { name: 'This is all placeholder data', description: ' of the loremlorem ipsumlorem loremlorem ipsumlorem ipsum loremloremlorem ipsumlorem ipsumloremloremlorem ipsumlorem dddd ipsumlorem ipsumloremloremlorv dvem idseffves mlorem ipsumloremloremlorem ipsumlorem ipsumlore mlorem lorem i psumlorem ipsumlo remldd oremlorem ipsum lorem ipsumlor emloreml orem ipsumlorem ipsumlorcecepsumlorem ips ecewumlor emipsu mlorem ipsumlorem ipsum ipsum printing.', id: '1' },
+    { name: 'This is all placeholder data', description: 'fggfgfgfgsd', id: '1' },
     { name: 'placeholder event', description: 'with lorem ipsumthe ', id: '2' },
     { name: 'Careers And Higher Education Fest', description: 'lelorem ipsumtte, content', id: '3' },
     { name: 'Math Elective', description: 'years, ,  hereccident', id: '4' },
     { name: 'Chemistry Elective', description: 'are gipsumoing  Ipsum, you', id: '5' },
     { name: 'Econmics Elective', description: 'ipsumipsumipsum', id: '6' },
     { name: 'Physics Elective', description: '2000 ipsum ock', id: '7' },
+    { name: 'tertrtetert', description: 'ryry ipsum ock', id: '8' }
   ]);
+  */
+
+ const [event, setEvent] = useState(getSignUpButton())
 
   return (
     <View style={styles.container}>
