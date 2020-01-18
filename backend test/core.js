@@ -1,90 +1,12 @@
-// Sign Up Page Buttons
-class SignUpElective
-{
-    constructor(name, description)
-    {
-        this.name = name
-        this.description = description
-    }
-
-    name()
-    {
-        return this.name
-    }
-
-    description()
-    {
-        return this.description
-    }
-
-}
-
-export class SignUpButton
-{
-
-    constructor(name, description)
-    {
-        this.name = name
-        this.description = description
-        this.elective = []
-    }
-
-    addelective(name, description)
-    {
-        var t_elective = new SignUpElective(name, description)
-        this.elective.push(t_elective)
-    }
-
-    name()
-    {
-        return this.name
-    }
-
-    description()
-    {
-        return this.description
-    }
-
-    electivecount()
-    {
-        return this.elective.length
-    }
-
-    electivename(i)
-    {
-        if (i < this.electivecount())
-        {
-            return ''
-        }   
-
-        else{
-            return this.elective[i].name
-        }
-    }
-
-    electivedescription(i)
-    {
-        if (i < this.electivecount())
-        {
-            return ''
-        }   
-
-        else{
-         return this.elective[i].description
-        }
-    }
-
-}
-
-// Event Page
 export class EventList
 {
 
-    constructor(name, description, date)
+    constructor(name, description, date0)
     {
         this.name = name
         this.description = description
-        this.date = date
+        this.date0 = date0
+        this.date = date2()
     }
 
     name()
@@ -99,22 +21,22 @@ export class EventList
 
     day()
     {
-        return this.date[0]
+        return this.date0[0]
     }
 
     month()
     {
-        return this.date[1]
+        return this.date0[1]
     }
 
     year()
     {
-        return this.date[2]
+        return this.date0[2]
     }
 
     month_w()
     {
-        switch(this.date[1])
+        switch(this.date0[1])
         {
             case 1:
                 return 'January'
@@ -159,15 +81,15 @@ export class EventList
 
     date1()   //01-01-2020
     {
-        var ret = (date[0]).toString()
-        ret.concat('-',(date[1]).toString(),'-',(date[2]).toString())
+        var ret = (date0[0]).toString()
+        ret.concat('-',(date0[1]).toString(),'-',(date0[2]).toString())
         return ret
     }
 
-    date2()   //01-January-2020
+    date2()   //01 January 2020
     {
-        var ret = (date[0]).toString()
-        ret.concat(' ',this.month_w(),' ',(date[2]).toString())
+        var ret = (date0[0]).toString()
+        ret.concat(' ',this.month_w(),' ',(date0[2]).toString())
         return ret
     }
 
