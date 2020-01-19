@@ -11,6 +11,21 @@ export function getSignUpButton()
     var b = new SignUpButton('Games','Inter Class Game')
     ret.push(b)
     return ret
+ //Events   
+    var fs = require('fs');
+var obj_ent;
+fs.readFile('Events.json', 'utf8', function (err, data) {
+  if (err) throw err;
+  obj_ent = JSON.parse(data);
+    
+//Class Timetable
+    
+    var obj_table;
+fs.readFile('Timetable.json', 'utf8', function (err, data) {
+  if (err) throw err;
+  obj_table = JSON.parse(data);
+});
+
 
 /*
     for(var i = 0; i < z; i++)
