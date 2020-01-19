@@ -182,14 +182,14 @@ export class EventList
     date1()   //01-01-2020
     {
         var ret = (this.datea[0]).toString()
-        ret.concat('-',(this.datea[1]).toString(),'-',(this.datea[2]).toString())
+        ret = ret + '-' + (this.datea[1]).toString() + '-' + (this.datea[2]).toString()
         return ret
     }
 
     date2()   //01 January 2020
     {
         var ret = (this.datea[0]).toString()
-        ret.concat(' ',this.month_w(),' ',(this.datea[2]).toString())
+        ret = ret + ' ' + this.month_w() + ' ' + (this.datea[2]).toString()
         return ret
     }
 
