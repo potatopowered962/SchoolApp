@@ -174,8 +174,9 @@ export class EventList
         }
     }
     
-    date()
+    datef()
     {
+        this.dateformat(this.id)
         return this.date
     }
 

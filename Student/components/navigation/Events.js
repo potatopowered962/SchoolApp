@@ -20,7 +20,7 @@ export default function Events() {
   //   { name: 'Physics Elective', date: '4 April 2020', description: '2000 years old. Richard McClintock', id: '7' },
   // ]);
 
-  const [event, setEvent] = useState(getEventList(1))
+  const [event, setEvent] = useState(getEventList(2))
 
   return (
     <View style={styles.container}>
@@ -34,7 +34,7 @@ export default function Events() {
             <Text style={styles.cardHeader}>{item.name}</Text>
 
             <View style={styles.dateCard}>
-              <Text style={styles.cardDate}>{item.date2()}</Text>
+              <Text style={styles.cardDate}>{item.datef()}</Text>
             </View>
 
             <Text style={styles.cardDescription}>{item.description}</Text>

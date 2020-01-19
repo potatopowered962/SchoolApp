@@ -31,8 +31,8 @@ export default function Settings() {
             iconName="moon-o"
           />
 
-          <CheckRow
-            text="Check Row"
+          <SwitchRow
+            text="Enable Reminders"
             iconName="bell"
           />
 

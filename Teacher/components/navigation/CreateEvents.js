@@ -9,8 +9,6 @@ import {
 
 import EventForm from './eventForm';
 
-
-
 export default function CreateEvents() {
 
   return (

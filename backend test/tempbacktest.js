@@ -30,12 +30,23 @@ export function getSignUpButton()
 export function getEventList(id)
 {
     var ret = []
+
     var datea = datearray(15012020)
-    var a = new EventList('Open House','Show off the school and waste money',datea,id)
+    var a = new EventList('TMJC Open House','TMJC is holding its Open House to give prospective students and their parents a glimpse of our vibrant college life.',datea,id)
     ret.push(a)
-    var dateb = datearray(5022002)
-    var b = new EventList('Matriculation Day','Fist Day of school for J1',dateb,id)
+
+    var dateb = datearray(24012020)
+    var b = new EventList('Chinese New Year','To celebrate a new year. Students need not',dateb,id)
     ret.push(b)
+
+    var dateb = datearray(5022020)
+    var c = new EventList('Matriculation Day','Fist Day of school for J1',dateb,id)
+    ret.push(c)
+
+    var dateb = datearray(23032020)
+    var d = new EventList('TM Run','TMJC holds a mass marathon at Pasir Park.',dateb,id)
+    ret.push(d)
+
     return ret
 }
 

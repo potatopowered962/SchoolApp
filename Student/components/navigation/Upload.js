@@ -29,7 +29,7 @@ export default class Upload extends React.Component {
           onPress={this._pickImage}
         />
         {image &&
-          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+          <Image source={{ uri: image }} style={{ width: 300, height: 500 }} />}
       </View>
     );
   }

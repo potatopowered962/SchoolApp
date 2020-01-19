@@ -6,70 +6,61 @@ import {
   Button,
   FlatList,
   ActivityIndicator,
+
 } from 'react-native';
 import Constants from 'expo-constants';
 import { Header } from 'react-native-elements';
 
 
 export default class Home extends React.Component {
-  constructor(props){
-    super(props);
-    this.state ={ isLoading: true}
-  }
-  componentDidMount(){
-    return fetch('https://facebook.github.io/react-native/movies.json')
-      .then((response) => response.json())
-      .then((responseJson) => {
 
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson.movies,
-        }, function(){
-
-        });
-
-      })
-      .catch((error) =>{
-        console.error(error);
-      });
-  }
   render(){
-
-    if(this.state.isLoading){
-      return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
-        </View>
-      )
-    }
 
     return(
       <View style={styles.container} >
 
-        <Header centerComponent={{ text: 'MY TITLE', style: { color: '#000' } }}/>
 
         <View style={styles.classContainer}>
-          <FlatList
-            data={this.state.dataSource}
-            renderItem={({item}) =>
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>{item.title}, {item.releaseYear}</Text>
-              </View>
-            }
-            keyExtractor={({id}, index) => id}
-          />
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Class: </Text>
+            <Text style={styles.textImportant}>JC2 H2 Physics Tutorial</Text>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Time: </Text>
+            <Text style={styles.textImportant}>10:45 AM</Text>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Venue: </Text>
+            <Text style={styles.textImportant}>Tutorial Room C3-3</Text>
+          </View>
+
         </View>
 
         <View style={styles.classContainer}>
-          <FlatList
-            data={this.state.dataSource}
-            renderItem={({item}) =>
-              <View style={styles.textContainer}>
-                <Text style={styles.text}>{item.title}, {item.releaseYear}</Text>
-              </View>
-            }
-            keyExtractor={({id}, index) => id}
-          />
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Upcoming Examination: </Text>
+            <Text style={styles.textImportant}>H2 Mathematics</Text>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Date: </Text>
+            <Text style={styles.textImportant}>2 July 2020</Text>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Venue: </Text>
+            <Text style={styles.textImportant}>Hall</Text>
+          </View>
+
+          <View style={styles.infoContainer}>
+            <Text style={styles.text}>Seat Number: </Text>
+            <Text style={styles.textImportant}>D-93</Text>
+          </View>
+
         </View>
 
       </View>
@@ -89,26 +80,31 @@ const styles = StyleSheet.create({
   },
   classContainer: {
     flex: 1,
-    paddingTop:20,
+    paddingVertical: 20,
     borderWidth: 3,
     borderRadius: 20,
     padding: 20,
     backgroundColor: '#d5c455',
-    borderColor: '#be8abf'
+    borderColor: '#be8abf',
+    marginVertical: 40,
+    
   },
-  textContainer: {
-    width: 200,
-    height:50,
-    borderWidth: 3,
-    borderRadius: 20,
-    backgroundColor: 'rgb(100,50,50)',
-    flex:1,
+  infoContainer: {
+    flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
+  },
+  text: {
+    fontSize: 16,
+    marginHorizontal: 2,
+  },
+  textImportant: {
+    fontSize: 16,
+    marginHorizontal: 2,
+    fontWeight: 'bold',
+  }
+  
 
-  },
-  text:{
-    alignContent: 'center'
-  },
   
 
 });

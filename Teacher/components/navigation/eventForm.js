@@ -14,7 +14,7 @@ export default function EventForm() {
     return (
         <View style={styles.container}>
             <Formik
-                initialValues={{ event: '', description: '' }}
+                initialValues={{ event: '', date: '', description: '' }}
                 onSubmit={(values) => {
                     console.log(values);
                 }}
@@ -25,9 +25,17 @@ export default function EventForm() {
                     <Text style={styles.text}>Event Name</Text>
                     <TextInput
                         style={styles.input}
-                        placeholder='Event name'
+                        placeholder='Event Name'
                         onChangeText={props.handleChange('event')}
                         value={props.values.title}
+                    />
+
+                    <Text style={styles.text}>Event Date/Period</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='Date/Period'
+                        onChangeText={props.handleChange('date')}
+                        value={props.values.description}
                     />
 
                     <Text style={styles.text}>Event Description</Text>
@@ -39,7 +47,8 @@ export default function EventForm() {
                         value={props.values.description}
                     />
 
-                    <Button color='maroon' title="Post Event" onPress={props.handleSubmit} /> 
+
+                    <Button style={styles.button} color='maroon' title="Post Event" onPress={props.handleSubmit} /> 
                 </View>
             )}
 
@@ -68,6 +77,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 16,
+    },
+    button: {
+        marginVertical: 20,
     }
 
 });
