@@ -85,7 +85,7 @@ export class EventList
         this.name = name
         this.description = description
         this.datea = datea
-        this.date = ''
+        this.date = dateformat(id)
         this.id = id
     }
 
@@ -172,6 +172,11 @@ export class EventList
             default:
                 this.date = this.date1()
         }
+    }
+    
+    date()
+    {
+        return this.date
     }
 
     date1()   //01-01-2020
