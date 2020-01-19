@@ -85,7 +85,7 @@ export class EventList
         this.name = name
         this.description = description
         this.datea = datea
-        this.date = dateformat(id)
+        this.date = this.dateformat(id)
         this.id = id
     }
 
