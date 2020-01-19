@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Navigator from './LoginStack';
-import Amplify from 'aws-amplify';
-import amplify from './YOUR-PATH-TO/aws-exports';
-Amplify.configure(amplify);
+//import Amplify from 'aws-amplify';
+//import amplify from './YOUR-PATH-TO/aws-exports';
+//Amplify.configure(amplify);
 // import {Authenticator} from 'aws-amplify-react-native';
 // import awsconfig from ''
 // Amplify.configure({
