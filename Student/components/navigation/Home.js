@@ -47,8 +47,8 @@ export default class Home extends React.Component {
           </View>
 
           <View style={styles.infoContainer}>
-            <Text style={styles.text}>Date: </Text>
-            <Text style={styles.textImportant}>2 July 2020</Text>
+            <Text style={styles.text}>Date/Time: </Text>
+            <Text style={styles.textImportant}>2 July 2020 / 9:00 AM</Text>
           </View>
 
           <View style={styles.infoContainer}>
