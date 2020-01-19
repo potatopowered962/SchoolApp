@@ -31,12 +31,10 @@ export function getEventList(id)
 {
     var ret = []
     var datea = datearray(15012020)
-    var a = new EventList('Open House','Show off the school and waste money',datea)
-    a.dateformat(id)
+    var a = new EventList('Open House','Show off the school and waste money',datea,id)
     ret.push(a)
     var dateb = datearray(5022002)
-    var b = new EventList('Matriculation Day','Fist Day of school for J1',dateb)
-    b.dateformate(id)
+    var b = new EventList('Matriculation Day','Fist Day of school for J1',dateb,id)
     ret.push(b)
     return ret
 }
