@@ -4,12 +4,22 @@ import { EventList } from './core.js'
 export function getSignUpButton()
 {
     var ret = []
-    var a = new SignUpButton('Extra Class','To Make you suffer')
+
+    var a = new SignUpButton('Math Olympiad','Calling all students with an aptitude and interest in Math!')
     ret.push(a)
+
     ret[0].addelective('A','Subject A')
     ret[0].addelective('B','Subject B')
-    var b = new SignUpButton('Games','Inter Class Game')
+
+    var b = new SignUpButton('PE Electives','Choose your own sports to play.')
     ret.push(b)
+
+    var c = new SignUpButton('GP Day','Dear students, do sign up for one talk for GP Day.')
+    ret.push(c)
+
+    var d = new SignUpButton('CCA','Dear JC1 Students, please indicate your preference for CCAs.')
+    ret.push(d)
+
     return ret
 
 /*
