@@ -34,7 +34,7 @@ export default function Events() {
             <Text style={styles.cardHeader}>{item.name}</Text>
 
             <View style={styles.dateCard}>
-              <Text style={styles.cardDate}>{item.date}</Text>
+              <Text style={styles.cardDate}>{item.date2()}</Text>
             </View>
 
             <Text style={styles.cardDescription}>{item.description}</Text>
