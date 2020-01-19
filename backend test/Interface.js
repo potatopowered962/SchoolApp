@@ -4,6 +4,7 @@ import { EventList } from './core.js'
 export function getSignUpButton()
 {
     var ret = []
+    
     var a = new SignUpButton('Extra Class','To Make you suffer')
     ret.push(a)
     ret[0].addelective('A','Subject A')
@@ -18,13 +19,15 @@ fs.readFile('Events.json', 'utf8', function (err, data) {
   if (err) throw err;
   obj_ent = JSON.parse(data);
     
-//Class Timetable
+//SignUp
     
-    var obj_table;
-fs.readFile('Timetable.json', 'utf8', function (err, data) {
-  if (err) throw err;
-  obj_table = JSON.parse(data);
+   
+    
+   
+   ret.push(obj_event)
 });
+    
+
 
 
 /*
