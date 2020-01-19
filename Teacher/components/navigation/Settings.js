@@ -16,39 +16,31 @@ import ReactNativeSettingsPage, {
  
 export default function Settings() {
 
- 
- 
-
     return (
     <View style={styles.container}>
       <ReactNativeSettingsPage>
-        <SectionRow text="Usage">
+        <SectionRow text="Settings">
+
         <NavigateRow
-            text="Navigate Row"
+            text="Account"
             iconName="user-circle"
-            
           />
+
           <SwitchRow
-            text="Switch Row"
-            iconName="road"
-           
+            text="Dark Mode"
+            iconName="moon-o"
           />
-        </SectionRow>
-        <SectionRow text="Notifications">
+
           <CheckRow
             text="Check Row"
             iconName="bell"
-            _color="rgb(0,100,100)"
-         
           />
-          <SliderRow
-            text="Slider Row"
-            iconName="archive"
-            _color="#000"
-            _min={0}
-            _max={100}
-           
+
+          <NavigateRow
+            text="FAQ"
+            iconName="question"
           />
+
         </SectionRow>
       </ReactNativeSettingsPage>
 
@@ -61,7 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection:"row",
-    backgroundColor: '#cadefc',
+    backgroundColor: '#f1f1f1',
     alignItems: 'center',
     justifyContent: 'center',
   },

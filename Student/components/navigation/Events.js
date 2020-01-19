@@ -6,6 +6,7 @@ import {
   FlatList
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { getEventList } from "../../../backend test/tempbacktest";
 
 export default function Events() {
@@ -19,19 +20,23 @@ export default function Events() {
   //   { name: 'Physics Elective', date: '4 April 2020', description: '2000 years old. Richard McClintock', id: '7' },
   // ]);
 
-  const [event, setEvent] = useState(getEventList(2))
+  const [event, setEvent] = useState(getEventList(1))
 
   return (
     <View style={styles.container}>
 
       <FlatList 
         keyExtractor={(item) => item.id} 
-        data={event} 
+        data={event}
 
         renderItem={({ item }) => ( 
           <View style={styles.cardContainer}>
             <Text style={styles.cardHeader}>{item.name}</Text>
-            <Text style={styles.cardDate}>{item.date}</Text>
+
+            <View style={styles.dateCard}>
+              <Text style={styles.cardDate}>{item.date}</Text>
+            </View>
+
             <Text style={styles.cardDescription}>{item.description}</Text>
           </View>
         )}
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 40,
     paddingHorizontal: 20,
-    backgroundColor: '#cadefc',
+    backgroundColor: '#f1f1f1',
   },
   cardContainer: {
     flex: 1,
@@ -63,10 +68,13 @@ const styles = StyleSheet.create({
     marginTop: -17,
     marginLeft: -8,
     fontWeight: 'bold',
+    fontFamily: 'nunito-bold',
   },
-  cardDate: {
+  dateCard: {
     alignSelf: 'center',
     paddingVertical: 20,
+  },
+  textDate: {
     fontStyle: 'italic',
   },
   cardDescription: {

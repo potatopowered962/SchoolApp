@@ -80,11 +80,12 @@ export class SignUpButton
 export class EventList
 {
 
-    constructor(name, description, datea)
+    constructor(name, description, datea ,id)
     {
         this.name = name
         this.description = description
         this.datea = datea
+        this.date = this.dateformat(id)
     }
 
     name()

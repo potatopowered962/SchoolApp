@@ -23,7 +23,7 @@ export default function CreateEvents() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#cadefc',
+    backgroundColor: '#f1f1f1',
     padding: 30,
     flexDirection: 'column'
   },
